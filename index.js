@@ -89,71 +89,10 @@ app.post('/webhook/', function (req, res) {
 
 function sendTextMessage(sender, text) {
     if (text != 'null') {
-        let messageData = {
-            "attachment": {
-                "type": "template",
-                "payload": {
-                    "template_type": "list",
-                    "top_element_style": "compact",
-                    "elements": [
-                        {
-                            "title": "Classic T-Shirt Collection",
-                            "subtitle": "See all our colors",
-                            "image_url": "https://www.google.com.co/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
-                            "buttons": [
-                                {
-                                    "title": "View",
-                                    "type": "web_url",
-                                    "url": "https://www.google.com",
-                                    "messenger_extensions": true,
-                                    "webview_height_ratio": "tall",
-                                    "fallback_url": "https://www.google.com"
-                                }
-                            ]
-                        },
-                        {
-                            "title": "Classic White T-Shirt",
-                            "subtitle": "See all our colors",
-                            "default_action": {
-                                "type": "web_url",
-                                "url": "https://www.google.com",
-                                "messenger_extensions": false,
-                                "webview_height_ratio": "tall"
-                            }
-                        },
-                        {
-                            "title": "Classic Blue T-Shirt",
-                            "image_url": "https://www.google.com.co/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
-                            "subtitle": "100% Cotton, 200% Comfortable",
-                            "default_action": {
-                                "type": "web_url",
-                                "url": "https://www.google.com",
-                                "messenger_extensions": true,
-                                "webview_height_ratio": "tall",
-                                "fallback_url": "https://www.google.com"
-                            },
-                            "buttons": [
-                                {
-                                    "title": "Shop Now",
-                                    "type": "web_url",
-                                    "url": "https://www.google.com",
-                                    "messenger_extensions": true,
-                                    "webview_height_ratio": "tall",
-                                    "fallback_url": "https://www.google.com"
-                                }
-                            ]
-                        }
-                    ],
-                    "buttons": [
-                        {
-                            "title": "View More",
-                            "type": "postback",
-                            "payload": "payload"
-                        }
-                    ]
-                }
-            }
+        let messageData = { 'text':text
+            
         }
+            
         request({
             url: 'https://graph.facebook.com/v2.6/me/messages',
             qs: {access_token: token},
