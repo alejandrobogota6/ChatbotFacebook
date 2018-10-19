@@ -9,7 +9,7 @@ const app = express()
 // weatherman fb page
 const token = "EAAKth61pKuQBAEwGklC5zRVGFBSQ9bc29ix9BZBtNZBwUt3tHHcZA5ZC39fI5TAqZBzYFOd8tujQu09ZBwdbIjGscfdUe5R9uFDk1RH5pDbzA3s8VuoXbtK2eBqQ1M3oOsCdv2ZBab70g7u6xFDsdxaS0zz7WGUSZAquoHDn8GBcxQZDZD";
 
-const msngerServerUrl = 'https://usergiochatbot.herokuapp.com/';
+const msngerServerUrl = 'https://usergiochatbot.herokuapp.com/bot';
 
 app.set('port', (process.env.PORT || 5000))
 
