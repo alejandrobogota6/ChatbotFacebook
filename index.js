@@ -89,8 +89,12 @@ app.post('/webhook/', function (req, res) {
 
 function sendTextMessage(sender, text) {
     if (text != 'null') {
-        let messageData = { 'text':text
-            
+        let messageData = {"attachment": {
+                "type": "image",
+                "payload": {
+                    "url": "https://www.google.com.co/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
+                }
+            }
         }
             
         request({
